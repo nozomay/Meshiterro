@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'homes#top'
   devise_for :users
-  resources :post_images, only: [:new, :create, :index, :show, :destroy]
+  root 'homes#top'
+  resources :post_images, only: [:new, :create, :index, :show, :destroy]do
+   resources :post_comments, only: [:create, :destroy]
+    #post_imagesと親子関係（ネストするという）
+  end
 end
