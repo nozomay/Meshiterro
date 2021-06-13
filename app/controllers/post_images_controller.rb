@@ -11,6 +11,7 @@ class PostImagesController < ApplicationController
       redirect_to post_images_path
     else
       render :new
+      #redirect_to new_post_image_path
     end
     
   end
